@@ -24,14 +24,16 @@ public class Abilities : MonoBehaviour
     [Header("Ability 2")]
     public Image abilityImage2;
     public float cooldown2 = 10;
-    
     public KeyCode ability2;
+
     public ParticleSystem lightning;
+    
     public Image skillshot2;
-    private int attackTrigger2 = 0; 
+    private int attackTrigger2 = 0;
 
+    
 
-  
+    //Particle System of Firespell
     void IsFiring(int Fire1)
     {
         if (Fire1 == 1)
@@ -39,6 +41,7 @@ public class Abilities : MonoBehaviour
             fireball.Play();    
         }
     }
+    //Particle System of LightningSpell
     void IsLightning(int Light1)
     {
         if (Light1 == 1)
@@ -56,14 +59,13 @@ public class Abilities : MonoBehaviour
         attackTrigger1 = Animator.StringToHash("AttackTrigger1");
         attackTrigger2 = Animator.StringToHash("AttackTrigger2");
         skillshot.GetComponent<Image>().enabled = false;
-    
+        skillshot2.GetComponent<Image>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         Ability1();
-        
         Ability2();
        
 
